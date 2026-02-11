@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🎁 Бонус за отзыв • Steam</title>
+  <meta name="description" content="Бонус за отзыв: спасибо за поддержку! Красивые значки Steam для профиля." />
+  <link rel="icon" type="image/png" href="assets/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/favicon.jpg">
+  <meta name="theme-color" content="#0b0f17">
+
+  <style>
+    :root{
+      --bg:#0b0f17; --card:#111827; --card2:#0f172a; --text:#e5e7eb; --muted:#9ca3af;
+      --accent:#a78bfa; --accent2:#22d3ee; --warn:#fbbf24; --border:rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(167,139,250,.18), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(34,211,238,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+
+    .hero{
+      background: linear-gradient(135deg, rgba(167,139,250,.14), rgba(34,211,238,.10));
+      border:1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius:22px;
+      padding:18px 18px;
+      overflow:hidden;
+    }
+
+    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+    .badge{
+      display:inline-flex;gap:10px;align-items:center;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:14px;
+    }
+    .badge .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(167,139,250,.14);
+    }
+
+    h1{margin:10px 0 6px;font-size:26px}
+    .subtitle{margin:0;color:var(--muted)}
+    .meta{margin-top:10px;display:flex;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:14px}
+    .meta b{color:var(--text);font-weight:600}
+
+    .hero-head{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap:14px;
+      margin-top:10px;
+      align-items:start;
+    }
+    @media (max-width:900px){
+      .hero-head{grid-template-columns:1fr}
+    }
+
+    .hero-img-card img{
+      width:100%;
+      height:140px;
+      display:block;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      object-fit: contain;
+      object-position: center;
+      background: rgba(0,0,0,.35);
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    @media (max-width:900px){
+      .hero-img-card{max-width: 100%; justify-self: stretch;}
+    }
+
+    .hero-img-caption{
+      margin-top:8px;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .grid{display:grid;grid-template-columns: 1fr;gap:16px;margin-top:14px}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:16px;
+      box-shadow: var(--shadow);
+    }
+    .card h2{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+
+    .bullet{
+      list-style:none;
+      padding:0;
+      margin:10px 0 0;
+      display:grid;
+      gap:10px;
+      color:var(--muted);
+    }
+    .bullet li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      line-height:1.35;
+    }
+    .bullet .ic{width:18px;flex:0 0 18px;opacity:.95}
+    .bullet b{color:var(--text)}
+    .credit-link{
+      color: var(--accent2);
+      text-decoration:none;
+      border-bottom:1px dashed rgba(34,211,238,.55);
+      padding-bottom:2px;
+      font-weight:800;
+    }
+    .credit-link:hover{opacity:.9}
+
+    .shop-grid{
+      margin-top:12px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+    .shop-btn{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      text-decoration:none;
+      color:var(--text);
+      box-shadow: 0 10px 22px rgba(0,0,0,.20);
+      transition: transform .08s ease, opacity .08s ease;
+    }
+    .shop-btn:hover{opacity:.95; transform: translateY(-1px);}
+    .shop-left{display:flex;align-items:flex-start;gap:10px;min-width:0}
+    .shop-ic{
+      width:34px;height:34px;border-radius:12px;
+      display:grid;place-items:center;
+      background: rgba(167,139,250,.14);
+      border:1px solid rgba(167,139,250,.25);
+      flex:0 0 auto;
+    }
+    .shop-text{min-width:0}
+    .shop-title{
+      font-weight:900;
+      line-height:1.15;
+      margin:0;
+      font-size:14.5px;
+    }
+    .shop-sub{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.25;
+    }
+    .shop-go{
+      color: var(--accent2);
+      font-weight:900;
+      flex:0 0 auto;
+    }
+
+    .bottom-note{ margin-top:18px; }
+    .center-title{
+      text-align:center;
+      font-weight:900;
+      letter-spacing:.4px;
+      margin:0 0 12px;
+    }
+    .note-lines{
+      color:var(--muted);
+      margin:0;
+      display:grid;
+      gap:10px;
+      line-height:1.45;
+    }
+    .note-line{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .note-line .ic{width:18px;flex:0 0 18px}
+    .note-line b{color:var(--text)}
+
+    .footer{margin-top:18px;color:var(--muted);font-size:14px;text-align:center;opacity:.95}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="topbar">
+        <div class="badge"><span class="dot"></span>
+          <span>Бонус за отзыв • Обновлено: 06 декабря 2025</span>
+        </div>
+      </div>
+
+      <div class="hero-head">
+        <div>
+          <h1>🎁 Бонус за отзыв</h1>
+          <p class="subtitle">
+            Огромное спасибо за ваш отзыв! 💜
+            Это реально очень помогает — поддержка продавца даёт мотивацию делать больше полезного, обновлять материалы и радовать вас новыми штуками.
+            Спасибо, что нашли минутку и написали — вы лучшие 😊
+          </p>
+          <div class="meta">
+            <span>От: <b>Юкими</b></span>
+          </div>
+        </div>
+
+        <div class="hero-img-card">
+          <a href="assets/hero.gif" target="_blank" rel="noopener" style="display:block">
+            <img src="assets/hero.gif" alt="Steam badge example" loading="lazy">
+          </a>
+          <div class="hero-img-caption">Пример красивого значка/счётчика в профиле.</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <aside class="card">
+          <h2>✨ Про красивые значки Steam</h2>
+          <ul class="bullet">
+            <li><span class="ic">🎀</span><span>Оформление профиля — это стиль: значки, витрины, иллюстрации и мелочи, которые делают профиль “дороже”.</span></li>
+            <li><span class="ic">🏷️</span><span>Красивые значки особенно круто смотрятся вместе с витринами (скриншоты/любимые игры/коллекции) и тематическим фоном.</span></li>
+            <li><span class="ic">🧡</span><span>Если хотите — могу подсказать, что лучше смотрится под ваш стиль профиля (тёмный/аниме/минимализм/неон и т.д.).</span></li>
+            <li>
+              <span class="ic">📌</span>
+              <span>
+                Мой профиль/страница:
+                <a class="credit-link" href="https://funpay.com/users/3472051/" target="_blank" rel="noopener">
+                  Yukimi2208 / FunPay
+                </a>
+              </span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <div class="footer">✨ Ещё раз спасибо за поддержку! Ваши отзывы — это самая сильная мотивация 💜</div>
+
+    <section class="card bottom-note">
+      <h3 class="center-title">⚠️ ВНИМАНИЕ ⚠️</h3>
+      <div class="note-lines">
+        <div class="note-line"><span class="ic">❗</span><span>Если что-то не работает/не открывается в Steam — иногда это зависит от <b>региона</b>. Можно попробовать <b>VPN</b> ❗</span></div>
+        <div class="note-line"><span class="ic">💤</span><span>Обычно я доступен с <b>16:00</b> до <b>23:00</b> 💤</span></div>
+        <div class="note-line"><span class="ic">💌</span><span>Если есть вопросы — пишите, я постараюсь помочь 😊</span></div>
+      </div>
+    </section>
+
+    <!-- ПРОМО-БЛОК В САМОМ НИЗУ -->
+    <section class="card shop-card bottom-note">
+      <h3 class="center-title">🛒 Поддержать продавца</h3>
+      <p>Если вам понравился результат и хотите поддержать — вот мои услуги на FunPay 💜</p>
+
+      <div class="shop-grid">
+        <a class="shop-btn" href="https://funpay.com/lots/offer?id=61954569" target="_blank" rel="noopener">
+          <div class="shop-left">
+            <div class="shop-ic">❤️</div>
+            <div class="shop-text">
+              <p class="shop-title">Лайки</p>
+              <p class="shop-sub">🖼️ 20 ЛАЙКОВ ДЛЯ ВАШЕГО СКРИНШОТА ИЛИ ОБЗОРА STEAM 👍</p>
+            </div>
+          </div>
+          <div class="shop-go">→</div>
+        </a>
+
+        <a class="shop-btn" href="https://funpay.com/lots/offer?id=61954834" target="_blank" rel="noopener">
+          <div class="shop-left">
+            <div class="shop-ic">💬</div>
+            <div class="shop-text">
+              <p class="shop-title">Комментарии</p>
+              <p class="shop-sub">🎀 20 КОММЕНТАРИЕВ ДЛЯ ВАШЕГО STEAM ПРОФИЛЯ 🎀</p>
+            </div>
+          </div>
+          <div class="shop-go">→</div>
+        </a>
+
+        <a class="shop-btn" href="https://funpay.com/lots/offer?id=58877689" target="_blank" rel="noopener">
+          <div class="shop-left">
+            <div class="shop-ic">⭐</div>
+            <div class="shop-text">
+              <p class="shop-title">Лайки на обзоры</p>
+              <p class="shop-sub">📋 10 ЛАЙКОВ ДЛЯ ВАШЕГО ОБЗОРА ИГРЫ STEAM 👍</p>
+            </div>
+          </div>
+          <div class="shop-go">→</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">🎁 Бонус за отзыв • от Юкими</div>
+  </div>
+</body>
+</html>
