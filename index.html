@@ -197,47 +197,122 @@
     .footer{margin-top:18px;color:var(--muted);font-size:14px;text-align:center;opacity:.95}
 
     /* ====== BADGE GALLERY (25) ====== */
-    .badge-gallery{
-      margin-top:22px;
-      text-align:center;
-    }
-    .gallery-title{
-      font-size:22px;
-      margin:0 0 6px;
-      font-weight:900;
-      letter-spacing:.2px;
-    }
-    .gallery-sub{
-      color:var(--muted);
-      margin:0 0 16px;
-    }
-    .badge-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-      gap:14px;
-    }
-    .badge-item{
-      display:block;
-      padding:10px;
-      border-radius:16px;
-      background: rgba(255,255,255,.03);
-      border:1px solid var(--border);
-      box-shadow: 0 10px 22px rgba(0,0,0,.20);
-      transition: transform .12s ease, opacity .12s ease;
-    }
-    .badge-item:hover{
-      opacity:.96;
-      transform: translateY(-3px);
-    }
-    .badge-item img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.22);
-      object-fit:contain;
-    }
+   /* ====== BADGE GALLERY (25) — IMPROVED ====== */
+.badge-gallery{
+  margin-top:22px;
+  text-align:center;
+  padding:18px;
+}
+
+.gallery-title{
+  font-size:22px;
+  margin:0 0 6px;
+  font-weight:900;
+  letter-spacing:.2px;
+}
+
+.gallery-sub{
+  color:var(--muted);
+  margin:0 0 16px;
+}
+
+/* сетка выглядит ровнее */
+.badge-grid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap:14px;
+}
+
+@media (max-width: 920px){
+  .badge-grid{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 720px){
+  .badge-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 460px){
+  .badge-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* карточка значка */
+.badge-item{
+  position:relative;
+  display:block;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(120px 60px at 20% 10%, rgba(167,139,250,.16), transparent 60%),
+    radial-gradient(120px 60px at 80% 0%, rgba(34,211,238,.12), transparent 55%),
+    rgba(255,255,255,.02);
+  box-shadow: 0 10px 22px rgba(0,0,0,.25);
+  transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+}
+
+/* одинаковая “высота” превью */
+.badge-item .thumb{
+  width:100%;
+  aspect-ratio: 16 / 6;   /* идеально под твои широкие скрины */
+  display:block;
+  padding:10px;
+}
+
+.badge-item img{
+  width:100%;
+  height:100%;
+  display:block;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.25);
+  object-fit: contain;   /* ничего не обрезаем */
+  transform: translateZ(0);
+}
+
+/* красивый hover */
+.badge-item:hover{
+  transform: translateY(-4px);
+  border-color: rgba(34,211,238,.35);
+  box-shadow:
+    0 16px 34px rgba(0,0,0,.40),
+    0 0 0 6px rgba(34,211,238,.08);
+}
+
+/* затемнение + текст при наведении */
+.badge-item::after{
+  content:"Купить карточки →";
+  position:absolute;
+  left:10px; right:10px; bottom:10px;
+  padding:9px 10px;
+  border-radius:12px;
+  font-weight:900;
+  font-size:13px;
+  color:var(--text);
+  background: linear-gradient(135deg, rgba(34,211,238,.22), rgba(167,139,250,.18));
+  border:1px solid rgba(255,255,255,.12);
+  opacity:0;
+  transform: translateY(6px);
+  transition: opacity .14s ease, transform .14s ease;
+  pointer-events:none;
+}
+
+.badge-item:hover::after{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* маленький номер в углу */
+.badge-item .tag{
+  position:absolute;
+  top:10px; left:10px;
+  padding:6px 9px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  color:var(--text);
+  background: rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(6px);
+}
+
   </style>
 </head>
 
