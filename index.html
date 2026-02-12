@@ -197,100 +197,98 @@
     .footer{margin-top:18px;color:var(--muted);font-size:14px;text-align:center;opacity:.95}
 
     /* ====== BADGE GALLERY (25) ====== */
-   /* ====== BADGE GALLERY (25) — IMPROVED ====== */
-.badge-gallery{
-  margin-top:22px;
+   .badge-gallery{
+  margin-top:30px;
   text-align:center;
-  padding:18px;
+  padding:24px;
 }
 
 .gallery-title{
-  font-size:22px;
-  margin:0 0 6px;
+  font-size:26px;
+  margin:0 0 8px;
   font-weight:900;
-  letter-spacing:.2px;
+  letter-spacing:.3px;
 }
 
 .gallery-sub{
   color:var(--muted);
-  margin:0 0 16px;
+  margin:0 0 22px;
 }
 
-/* сетка выглядит ровнее */
+/* 🔥 КРУПНАЯ СЕТКА */
 .badge-grid{
   display:grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap:14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:22px;
 }
 
-@media (max-width: 920px){
-  .badge-grid{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-@media (max-width: 720px){
-  .badge-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-@media (max-width: 460px){
+/* планшет */
+@media (max-width: 900px){
   .badge-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* карточка значка */
+/* телефон */
+@media (max-width: 520px){
+  .badge-grid{ grid-template-columns: repeat(1, minmax(0, 1fr)); }
+}
+
+/* карточка */
 .badge-item{
   position:relative;
   display:block;
-  border-radius:16px;
+  border-radius:20px;
   overflow:hidden;
-  border:1px solid rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.12);
   background:
-    radial-gradient(120px 60px at 20% 10%, rgba(167,139,250,.16), transparent 60%),
-    radial-gradient(120px 60px at 80% 0%, rgba(34,211,238,.12), transparent 55%),
-    rgba(255,255,255,.02);
-  box-shadow: 0 10px 22px rgba(0,0,0,.25);
-  transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+    radial-gradient(180px 100px at 20% 10%, rgba(167,139,250,.18), transparent 60%),
+    radial-gradient(180px 100px at 80% 0%, rgba(34,211,238,.16), transparent 55%),
+    rgba(255,255,255,.03);
+  box-shadow: 0 14px 32px rgba(0,0,0,.35);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 
-/* одинаковая “высота” превью */
+/* 🔥 БОЛЬШЕ ВЫСОТА */
 .badge-item .thumb{
   width:100%;
-  aspect-ratio: 16 / 6;   /* идеально под твои широкие скрины */
+  aspect-ratio: 16 / 8; /* выше чем было */
   display:block;
-  padding:10px;
+  padding:18px;
 }
 
 .badge-item img{
   width:100%;
   height:100%;
   display:block;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.25);
-  object-fit: contain;   /* ничего не обрезаем */
-  transform: translateZ(0);
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.30);
+  object-fit: contain;
 }
 
-/* красивый hover */
+/* hover эффект мощнее */
 .badge-item:hover{
-  transform: translateY(-4px);
-  border-color: rgba(34,211,238,.35);
+  transform: translateY(-6px);
+  border-color: rgba(34,211,238,.45);
   box-shadow:
-    0 16px 34px rgba(0,0,0,.40),
-    0 0 0 6px rgba(34,211,238,.08);
+    0 20px 45px rgba(0,0,0,.50),
+    0 0 0 8px rgba(34,211,238,.10);
 }
 
-/* затемнение + текст при наведении */
+/* кнопка при наведении */
 .badge-item::after{
   content:"Купить карточки →";
   position:absolute;
-  left:10px; right:10px; bottom:10px;
-  padding:9px 10px;
-  border-radius:12px;
+  left:18px; right:18px; bottom:18px;
+  padding:12px;
+  border-radius:14px;
   font-weight:900;
-  font-size:13px;
+  font-size:15px;
   color:var(--text);
-  background: linear-gradient(135deg, rgba(34,211,238,.22), rgba(167,139,250,.18));
-  border:1px solid rgba(255,255,255,.12);
+  background: linear-gradient(135deg, rgba(34,211,238,.28), rgba(167,139,250,.22));
+  border:1px solid rgba(255,255,255,.15);
   opacity:0;
-  transform: translateY(6px);
-  transition: opacity .14s ease, transform .14s ease;
+  transform: translateY(8px);
+  transition: opacity .18s ease, transform .18s ease;
   pointer-events:none;
 }
 
@@ -299,19 +297,19 @@
   transform: translateY(0);
 }
 
-/* маленький номер в углу */
+/* номер */
 .badge-item .tag{
   position:absolute;
-  top:10px; left:10px;
-  padding:6px 9px;
+  top:14px; left:14px;
+  padding:8px 12px;
   border-radius:999px;
-  font-size:12px;
+  font-size:13px;
   font-weight:900;
   color:var(--text);
-  background: rgba(0,0,0,.35);
-  border:1px solid rgba(255,255,255,.10);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,.45);
+  border:1px solid rgba(255,255,255,.15);
 }
+
 
   </style>
 </head>
