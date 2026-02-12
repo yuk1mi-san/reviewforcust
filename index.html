@@ -195,6 +195,49 @@
     .note-line b{color:var(--text)}
 
     .footer{margin-top:18px;color:var(--muted);font-size:14px;text-align:center;opacity:.95}
+
+    /* ====== BADGE GALLERY (25) ====== */
+    .badge-gallery{
+      margin-top:22px;
+      text-align:center;
+    }
+    .gallery-title{
+      font-size:22px;
+      margin:0 0 6px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .gallery-sub{
+      color:var(--muted);
+      margin:0 0 16px;
+    }
+    .badge-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap:14px;
+    }
+    .badge-item{
+      display:block;
+      padding:10px;
+      border-radius:16px;
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--border);
+      box-shadow: 0 10px 22px rgba(0,0,0,.20);
+      transition: transform .12s ease, opacity .12s ease;
+    }
+    .badge-item:hover{
+      opacity:.96;
+      transform: translateY(-3px);
+    }
+    .badge-item img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      object-fit:contain;
+    }
   </style>
 </head>
 
@@ -222,7 +265,7 @@
 
         <div class="hero-img-card">
           <a href="assets/hero.gif" target="_blank" rel="noopener" style="display:block">
-            <img src="assets/hero.gif" alt="Steam badge example" loading="lazy">
+            <img src="assets/hero.gif" alt="Steam badge example">
           </a>
           <div class="hero-img-caption">Пример красивого значка/счётчика в профиле.</div>
         </div>
@@ -249,6 +292,117 @@
       </div>
     </header>
 
+    <!-- ✅ БЛОК С 25 ЗНАЧКАМИ (кликабельные, ведут на покупку карточек) -->
+    <section class="card badge-gallery">
+  <h2 class="gallery-title">🎨 Значки для профиля Steam</h2>
+  <p class="gallery-sub">Нажмите на значок, чтобы перейти к покупке карточек.</p>
+
+  <div class="badge-grid">
+
+    <a class="badge-item" href="ССЫЛКА_1" target="_blank">
+      <img src="assets/badges/Screenshot_1.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_2" target="_blank">
+      <img src="assets/badges/Screenshot_2.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_3" target="_blank">
+      <img src="assets/badges/Screenshot_3.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_4" target="_blank">
+      <img src="assets/badges/Screenshot_4.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_5" target="_blank">
+      <img src="assets/badges/Screenshot_5.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_6" target="_blank">
+      <img src="assets/badges/Screenshot_6.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_7" target="_blank">
+      <img src="assets/badges/Screenshot_7.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_8" target="_blank">
+      <img src="assets/badges/Screenshot_8.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_9" target="_blank">
+      <img src="assets/badges/Screenshot_9.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_10" target="_blank">
+      <img src="assets/badges/Screenshot_10.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_11" target="_blank">
+      <img src="assets/badges/Screenshot_11.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_12" target="_blank">
+      <img src="assets/badges/Screenshot_12.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_13" target="_blank">
+      <img src="assets/badges/Screenshot_13.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_14" target="_blank">
+      <img src="assets/badges/Screenshot_14.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_15" target="_blank">
+      <img src="assets/badges/Screenshot_15.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_16" target="_blank">
+      <img src="assets/badges/Screenshot_16.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_17" target="_blank">
+      <img src="assets/badges/Screenshot_17.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_18" target="_blank">
+      <img src="assets/badges/Screenshot_18.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_19" target="_blank">
+      <img src="assets/badges/Screenshot_19.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_20" target="_blank">
+      <img src="assets/badges/Screenshot_20.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_21" target="_blank">
+      <img src="assets/badges/Screenshot_21.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_22" target="_blank">
+      <img src="assets/badges/Screenshot_22.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_23" target="_blank">
+      <img src="assets/badges/Screenshot_23.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_24" target="_blank">
+      <img src="assets/badges/Screenshot_24.png">
+    </a>
+
+    <a class="badge-item" href="ССЫЛКА_25" target="_blank">
+      <img src="assets/badges/Screenshot_25.png">
+    </a>
+
+  </div>
+</section>
+
+
     <div class="footer">✨ Ещё раз спасибо за поддержку! Ваши отзывы — это самая сильная мотивация 💜</div>
 
     <section class="card bottom-note">
@@ -260,7 +414,6 @@
       </div>
     </section>
 
-    <!-- ПРОМО-БЛОК В САМОМ НИЗУ -->
     <section class="card shop-card bottom-note">
       <h3 class="center-title">🛒 Поддержать продавца</h3>
       <p>Если вам понравился результат и хотите поддержать — вот мои услуги на FunPay 💜</p>
@@ -305,3 +458,4 @@
   </div>
 </body>
 </html>
+
